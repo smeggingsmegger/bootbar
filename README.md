@@ -29,6 +29,7 @@ Usage:
 $.bootbar.info("This is a simple info bar. Click the &times; to close.");
 
 // See also:
+// $.bootbar.show // generic call
 // $.bootbar.warning
 // $.bootbar.danger
 // $.bootbar.success
@@ -42,7 +43,7 @@ Advanced Usage:
 var options = {
         autoDismiss: false,      // Don't automatically dismiss the bar.
         autoLinkClass: true,     // onDraw callback
-        barType: alertTypes[0],  // info
+        barType: "info",         // info box
         dismissTimeout: 3000,    // 3 Seconds
         dismissEffect: "slide",  // Slide away: (slide, fade)
         dismissSpeed: "fast",    // Dismiss speed: (slow, fast)
@@ -51,7 +52,7 @@ var options = {
 };
 
 // Feel free to change any of them to suit your needs.
-$.bootbar.info("This is a simple info bar. Click the &times; to close.", options);
+$.bootbar.show("This is a simple info bar. Click the &times; to close.", options);
 
 // onDraw is a function that fires as soon as the bar is drawn:
 $.bootbar.info("", { onDraw: function() {
