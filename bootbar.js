@@ -1,4 +1,5 @@
 (function($){
+    "use strict";
     $.extend($, {
         bootbar: function(message, options){
             var alertTypes = ["info", "warning", "error", "success"];
@@ -8,7 +9,7 @@
                     dismissTimeout: 3000,    // 3 Seconds
                     dismissEffect: "slide",  // Slide away: (slide, fade)
                     dismissSpeed: "slow",    // Dismiss speed: (slow, fast)
-                    onShow: null,            // onShow callback
+                    onDraw: null,            // onDraw callback
                     onDismiss: null          // onDismiss callback
             };
             var settings = $.extend({}, defaults, options || {});
@@ -24,23 +25,29 @@
             }
 
             $("body").prepend(template).each(function() {
-                $.isFunction(settings.onShow) && settings.onShow.call(this);
+                if ($.isFunction(settings.onDraw)) {
+                    settings.onDraw.call(this);
+                }
             });
 
             if (settings.autoDismiss) {
-                var timer = setTimeout(triggerClick, settings.dismissTimeout);
+                setTimeout(triggerClick, settings.dismissTimeout);
             }
 
             $(template).find(".close").unbind("click");
 
             $(template.find(".close")).on("click", function() {
-                if (settings.dismissEffect == "slide") {
+                if (settings.dismissEffect === "slide") {
                     $(template).slideUp(settings.dismissSpeed, function() {
-                        $.isFunction(settings.onDismiss) && settings.onDismiss.call(this);
+                        if ($.isFunction(settings.onDismiss)) {
+                            settings.onDismiss.call(this);
+                        }
                     });
                 } else {
                     $(template).fadeOut(settings.dismissSpeed, function() {
-                        $.isFunction(settings.onDismiss) && settings.onDismiss.call(this);
+                        if ($.isFunction(settings.onDismiss)) {
+                            settings.onDismiss.call(this);
+                        }
                     });
                 }
             });

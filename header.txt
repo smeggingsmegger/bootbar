@@ -1,0 +1,5 @@
+/**
+ * bootbar.js v0.0.1
+ *
+ * https://raw.github.com/smeggingsmegger/bootbar/master/LICENSE
+ */

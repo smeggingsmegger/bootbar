@@ -20,7 +20,7 @@
         </p>
         <script>
             $(document).ready(function(){
-                $.bootbar("This is a test", {'dismissEffect': 'fade', 'autoDismiss': false, 'dismissTimeout': 5000});
+                $.bootbar("This is a test", {'dismissEffect': 'fade', 'autoDismiss': false, 'dismissTimeout': 5000, 'onDraw': function() { alert('TEST')}});
             });
         </script>
     </body>
