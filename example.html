@@ -20,7 +20,15 @@
         </p>
         <script>
             $(document).ready(function(){
-                $.bootbar("This is a test", {'dismissEffect': 'fade', 'autoDismiss': false, 'dismissTimeout': 5000, 'onDraw': function() { alert('TEST')}});
+                $.bootbar.info("This is a standard info bar.");
+                $.bootbar.warning("This warning is stacked underneath the original info bar.");
+                $.bootbar.danger("This is a standard danger bar.");
+                $.bootbar.success("This is a standard success bar.");
+
+                $.bootbar.info("This <a href=\"#\">info bar<\/a> fades away.", {dismissEffect: 'fade'});
+                $.bootbar.warning("This <a href=\"#\">warning bar<\/a> fades away.", {autoLinkClass: false, dismissEffect: 'fade'});
+                $.bootbar.danger("This danger bar fades away.", {dismissEffect: 'fade'});
+                $.bootbar.success("This success bar fades away.", {dismissEffect: 'fade'});
             });
         </script>
     </body>
