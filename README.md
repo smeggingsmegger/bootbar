@@ -5,7 +5,7 @@ bootbar
 
 Notifcation bar plugin for Bootstrap + jQuery / Zepto
 
-Installation:
+# Installation:
 
 ```html
 <!-- We need jquery 1.8+ -->
@@ -22,7 +22,7 @@ Installation:
 <link rel="stylesheet" href="bootbar.css">
 ```
 
-Usage:
+# Usage:
 
 ```javascript
 // Raise a simple info bar:
@@ -35,7 +35,7 @@ $.bootbar.info("This is a simple info bar. Click the &times; to close.");
 // $.bootbar.success
 ```
 
-Advanced Usage:
+# Advanced Usage:
 
 ```javascript
 // Here are the defaults and the options available for configuration:
