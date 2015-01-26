@@ -5,7 +5,7 @@ bootbar
 
 Notifcation bar plugin for Bootstrap + jQuery / Zepto
 
-Installation:
+# Installation:
 
 ```html
 <!-- We need jquery 1.8+ -->
@@ -17,12 +17,11 @@ Installation:
 <!-- Bootstrap JavaScript -->
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-<!-- Finally the bootbar CSS and JS -->
+<!-- Finally the bootbar JS -->
 <script src="bootbar.js"></script>
-<link rel="stylesheet" href="bootbar.css">
 ```
 
-Usage:
+# Usage:
 
 ```javascript
 // Raise a simple info bar:
@@ -35,20 +34,21 @@ $.bootbar.info("This is a simple info bar. Click the &times; to close.");
 // $.bootbar.success
 ```
 
-Advanced Usage:
+# Advanced Usage:
 
 ```javascript
 // Here are the defaults and the options available for configuration:
 
 var options = {
-        autoDismiss: false,      // Don't automatically dismiss the bar.
-        autoLinkClass: true,     // onDraw callback
-        barType: "info",         // info box
-        dismissTimeout: 3000,    // 3 Seconds
-        dismissEffect: "slide",  // Slide away: (slide, fade)
-        dismissSpeed: "fast",    // Dismiss speed: (slow, fast)
-        onDraw: null,            // onDraw callback
-        onDismiss: null          // onDismiss callback
+        alertClass: "bootbar-alert",    // Default class of the alert is "bootbar-alert"
+        autoDismiss: false,             // Don't automatically dismiss the bar.
+        autoLinkClass: true,            // onDraw callback
+        barType: alertTypes[0],         // info
+        dismissTimeout: 3000,           // 3 Seconds
+        dismissEffect: "slide",         // Slide away: (slide, fade)
+        dismissSpeed: "fast",           // Dismiss speed: (slow, fast)
+        onDraw: null,                   // onDraw callback
+        onDismiss: null                 // onDismiss callback
 };
 
 // Feel free to change any of them to suit your needs.
